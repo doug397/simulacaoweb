@@ -33,40 +33,7 @@ public class UsuarioBean {
 	
 	public String salvar(){
 		
-		 String url="jdbc:postgresql://localhost/cadastro";
-			
-			String usuario="postgres";
-			String senha="root";
-			String sql="insert into usuario values(?,?)";
-			
-			try(Connection conexao= DriverManager.getConnection(url,usuario,senha)){
-				System.out.println("Conexao Bem Sucedida");
-				
-				PreparedStatement insert= conexao.prepareStatement(sql);
-				try{	
-					insert.setString(1,this.getNome());
-					insert.setString(2,this.getSenha());
-					insert.executeUpdate();
-					System.out.println("Inserido COm sucesso");
-					
-					}catch(SQLException e){
-							System.out.println("Erro ao incluir"+e.getMessage());
-				
-					}finally{
-						
-						try{
-							insert.close();
-							conexao.close();
-							System.out.println("Fechado Com Sucesso");
-						
-						}catch(Throwable e){
-							System.out.println("Erro ao fechar");
-						}
-					}
-				
-			}catch(SQLException e){
-				System.out.println("Erro ao se conectar No ");
-			}
+		
 			
 		
 		FacesContext context= FacesContext.getCurrentInstance();
