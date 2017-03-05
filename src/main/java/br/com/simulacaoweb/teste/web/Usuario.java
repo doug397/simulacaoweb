@@ -3,6 +3,8 @@ package br.com.simulacaoweb.teste.web;
 public class Usuario {
 	 private String nome;
      private String senha;
+     
+  
 	public String getNome() {
 		return nome;
 	}

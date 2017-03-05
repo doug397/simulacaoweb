@@ -25,8 +25,7 @@ public class UsuarioBean {
 	
 	
 	public String novo(){
-	
-		
+			
 		return "usuario";
 		
 	}
@@ -40,13 +39,17 @@ public class UsuarioBean {
 		if(!this.senha.equalsIgnoreCase(this.confirmaSenha)){
 			
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-					"Senha Confrimada Incorretamente",""));
+					"Senha Confrimada Incorretamente Verifique suas Credenciais",""));
 				
+			ListaUsuarios lista= new ListaUsuarios();
+			System.out.println(lista.toString());
 			
+		
 			
 			
 			return "usuario";
 		}
+		
 		return "mostrausuario";
 		
 	}
